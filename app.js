@@ -18,6 +18,6 @@ app.use('/api/forum', forum)
 //     res.send("This is data from the /api/test endpoint. It's from the new server.");
 // });
 
-app.listen(4000, function(){
-    console.log('App is listening on 3000.') 
+app.listen(process.env.PORT, function(){
+    console.log(`App is listening on 3000. ${process.env.PORT}`) 
 });
