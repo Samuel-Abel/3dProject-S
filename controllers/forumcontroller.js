@@ -34,13 +34,15 @@ router.post('/post/create', function (req, res){
     let name = req.body.forum.name;
     let description = req.body.forum.description;
     let dimensions = req.body.forum.dimensions;
+    let photo = req.body.forum.photo;
     let owner = req.user.id
 
     forumModel.create({
         name: name,
         description: description,
         dimensions: dimensions,
-        owner: owner
+        owner: owner,
+        photo: photo
     }).then(
         function createSuccess(response){
             res.json({message: 'success',
@@ -71,10 +73,12 @@ router.put('/post/update:id', function(req,res){
     let name = req.body.forum.name;
     let description = req.body.forum.description;
     let dimensions = req.body.forum.dimensions;
+    let photo = req.body.forum.photo;
     forumModel.update({
         name: name,
         description: description,
-        dimensions: dimensions
+        dimensions: dimensions,
+        photo: photo
     },{ where: { id: primaryKey, owner: userid }}
     ).then(
         data => {

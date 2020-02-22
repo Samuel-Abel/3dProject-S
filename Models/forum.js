@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes){
         name: DataTypes.STRING,
         description: DataTypes.STRING,
         dimensions: DataTypes.STRING,
-        owner: DataTypes.INTEGER
+        owner: DataTypes.INTEGER,
+        photo: DataTypes.STRING
     })
 }
